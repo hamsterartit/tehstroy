@@ -29,8 +29,8 @@ const path = {
     src: {
         html: srcFldr + '/templates/*.html',
         js: srcFldr + '/js/main.js',
-        img: srcFldr + '/img/*.{png, jpg, jpeg}',
-        stylesImg: srcFldr + '/styles/img/*.{png, jpg, jpeg}',
+        img: srcFldr + '/img/*',
+        stylesImg: srcFldr + '/styles/img/*',
         css: srcFldr + '/styles/scss/styles.scss',
         fonts: srcFldr + '/styles/fonts/',
         icons: srcFldr + '/styles/icons/*.svg',
@@ -93,13 +93,13 @@ function img() {
     gulp.src(path.src.stylesImg)
         .pipe(imagemin())
         .pipe(gulp.dest(path.build.stylesImg));
-    gulp.src(path.src.img)
+    return gulp.src(path.src.img)
         .pipe(imagemin())
         .pipe(gulp.dest(path.build.img));
-    return gulp.src(path.src.img)
+    /*return gulp.src(path.src.img)
         .pipe(webp())
         .pipe(gulp.dest(path.build.img))
-        .pipe(browserSync.stream());
+        .pipe(browserSync.stream())*/;
 }
 
 /* TTF to WOFF & WOOF2 ================================================================================================================= */

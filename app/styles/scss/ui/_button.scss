@@ -1,20 +1,32 @@
-.btn {
-  display: inline-flex;
-  transition: color $animate-duration-effect ease;
+.btn-red {
+  --color: #fff;
+  --back-color: #FF0000;
+  display: inline-block;
+  transition: background-color $animate-duration-effect ease;
+  height: 70px;
+  min-width: 260px;
+  color: var(--color);
+  background-color: var(--back-color);
+  font-size: rem(20);
+  text-align: center;
+  line-height: 70px;
+  text-decoration: none;
 
-  &:hover {
-
+  @include for-size(phone-only) {
+    width: 100%;
   }
 
-  &:focus {
-
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      --back-color: #df0000;
+    }
   }
 
   &:active {
-
+    --back-color: #c70000;
   }
 
   &:disabled {
-    
+    opacity: .7;
   }
 }

@@ -20,9 +20,10 @@ body {
 	font-family: "Montserrat", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background-color: #666;
 	margin: 0;
 	overflow-x: hidden;
+	font-size: 1rem;
+	line-height: rem(30);
 
 	&.locked {
 		overflow: hidden;
@@ -62,4 +63,8 @@ button {
 
 select {
 	appearance: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 600;
 }

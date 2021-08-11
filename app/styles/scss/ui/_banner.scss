@@ -1,0 +1,103 @@
+.banner {
+  height: calc(100vh - 90px);
+
+  @include for-size(tablet-portrait-up) {
+    height: calc(100vh - 190px);
+  }
+
+  &__slider {
+    height: 100%;
+  }
+
+  &__slide {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__back {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(15px);
+    padding: rem(15);
+    color: #fff;
+
+    @include for-size(tablet-portrait-up) {
+      padding: rem(60);
+    }
+  }
+
+  &__title {
+    font-size: rem(35);
+    line-height: rem(45);
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &__text {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+
+  &__link {
+    margin-top: 40px;
+  }
+
+  .swiper-pagination-bullet {
+    --size: 20px;
+    width: var(--size);
+    height: var(--size);
+    background-color: #FFFFFF;
+    opacity: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    @include for-size(tablet-portrait-up) {
+      --size: 31px;
+    }
+
+    &:before {
+      --size: 10px;
+      width: var(--size);
+      height: var(--size);
+      content: "";
+      background-color: #FF0000;
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity $animate-duration-effect ease;
+
+      @include for-size(tablet-portrait-up) {
+        --size: 19px;
+      }
+    }
+  }
+
+  .swiper-pagination-bullet-active {
+    &:before {
+      opacity: 1;
+    }
+  }
+
+  .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+    --mg: 5px;
+    margin: 0 var(--mg);
+
+    @include for-size(tablet-portrait-up) {
+      --mg: 15px;
+    }
+  }
+}

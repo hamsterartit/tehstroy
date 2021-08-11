@@ -1,6 +1,28 @@
 @@include('page-set/page-doctype.html', {"title":"Техстрой"})
 @@include('page-blocks/header.html')
 <main>
+    <section class="banner">
+        <h1 hidden>Техстрой - Монтаж внутренних инженерных систем</h1>
+        <div class="banner__slider swiper-container js-banner-slider">
+            <div class="swiper-wrapper">
+                @@for(var i = 0; i < 4; i++) {
+                <div class="banner__slide swiper-slide">
+                    <div class="banner__back _ibg">
+                        <img src="img/banner.jpg" alt="">
+                    </div>
+                    <div class="banner__content _container">
+                        <h2 class="banner__title">Монтаж внутренних инженерных систем</h2>
+                        <p class="banner__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta, mi
+                            nec faucibus tempor,
+                            risus nisi tristique leo, tempor ultricies nibh eros eget eros.</p>
+                        <a href="" class="btn-red banner__link">Подробнее</a>
+                    </div>
+                </div>
+                }
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
 </main>
 @@include('page-blocks/footer.html')
 @@include('page-set/scripts.html')
