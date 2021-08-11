@@ -1,0 +1,106 @@
+.header {
+  height: 90px;
+  background-color: #fff;
+
+  @include for-size(tablet-portrait-up) {
+    height: 189px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include for-size(tablet-portrait-up) {
+      align-items: flex-end;
+    }
+  }
+
+  &__contact {
+    &:first-child {
+      margin-bottom: rem(20);
+    }
+  }
+}
+
+.logo {
+  width: rem(120);
+  display: inline-block;
+}
+
+.nav {
+  @include for-size(tablet-portrait-down) {
+    background-color: #fff;
+    position: absolute;
+    top: 90px;
+    right: 0;
+    left: 100%;
+    height: calc(100vh - 90px);
+    width: 100vw;
+    padding-top: 50px;
+    transition: left $animate-duration-effect ease;
+
+    &._active {
+      left: 0;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+
+    @include for-size(tablet-portrait-down) {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  &__item {
+    list-style: none;
+
+    &:not(:last-child) {
+      margin-bottom: rem(30);
+
+      @include for-size(tablet-portrait-up) {
+        margin-right: rem(30);
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__link {
+    --color: #000;
+    text-decoration: none;
+    color: var(--color);
+    position: relative;
+    transition: color $animate-duration-effect ease;
+
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      height: 2px;
+      left: 0;
+      right: 100%;
+      transition: right $animate-duration-effect ease;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        --color: #ff0000;
+
+        &:before {
+          right: 0;
+          background-color: var(--color);
+        }
+      }
+    }
+  }
+}

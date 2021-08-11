@@ -1,19 +1,30 @@
 // Media mixin ===========================================================================================================
 @mixin for-size($range) {
   $phone-up-boundary: 576px;
-  $tablet-portrait-up-boundary: 768px;
+  $tablet-portrait-down-boundary: 963px;
+  $tablet-portrait-up-boundary: 964px;
   $tablet-landscape-up-boundary: 1024px;
-  $desktop-up-boundary: 1400px;
+  $desktop-up-boundary: 1200px;
 
   @if $range == phone-only {
-    @media (max-width: #{$phone-up-boundary - 1}) { @content; }
+    @media (max-width: #{$phone-up-boundary - 1}) {
+      @content;
+    }
+  } @else if $range == tablet-portrait-down {
+    @media (max-width: $tablet-portrait-down-boundary) {
+      @content;
+    }
   } @else if $range == tablet-portrait-up {
-    @media (min-width: $phone-up-boundary) { @content; }
+    @media (min-width: $tablet-portrait-up-boundary) {
+      @content;
+    }
   } @else if $range == tablet-landscape-up {
-    @media (min-width: $tablet-portrait-up-boundary) { @content; }
+    @media (min-width: $tablet-landscape-up-boundary) {
+      @content;
+    }
   } @else if $range == desktop-up {
-    @media (min-width: $tablet-landscape-up-boundary) { @content; }
-  } @else if $range == big-desktop-up {
-    @media (min-width: $desktop-up-boundary) { @content; }
+    @media (min-width: $desktop-up-boundary) {
+      @content;
+    }
   }
 }

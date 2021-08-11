@@ -58,7 +58,7 @@ const path = {
 function html() {
     return gulp.src(path.src.html)
         .pipe(fileInclude())
-        .pipe(webpHtml())
+        /*.pipe(webpHtml())*/
         .pipe(gulp.dest(path.build.html))
         .pipe(browserSync.stream());
 }
@@ -69,7 +69,7 @@ function css() {
         .pipe(scss({outputStyle: 'expanded'}).on('error', scss.logError))
         .pipe(groupMedia())
         .pipe(autoprefixer())
-        .pipe(webpCss())
+        /*.pipe(webpCss())*/
         .pipe(gulp.dest(path.build.css))
         .pipe(cleanCss())
         .pipe(rename({extname: '.min.css'}))

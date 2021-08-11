@@ -1,48 +1,79 @@
 /* Container =========================================================================================================== */
 ._container {
-    width: 100%;
-    max-width: $container-max-width;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
+  width: 100%;
+  max-width: $container-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-left: $pd;
+  padding-right: $pd;
+}
+
+/* Contact link =========================================================================================================== */
+.contact-link {
+  --color: #fff;
+  font-size: rem(25);
+  font-weight: 500;
+  color: var(--color);
+  text-decoration: none;
+  transition: color $animate-duration-effect ease;
+
+  svg {
+    height: 26px;
+    width: 26px;
+    fill: var(--color);
+    margin-right: rem(15);
+    display: inline-block;
+    vertical-align: middle;
+    transition: fill $animate-duration-effect ease;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      --color: #000;
+    }
+  }
+  @include for-size(tablet-portrait-down) {
+    --color: #000;
+  }
 }
 
 /* Image background =========================================================================================================== */
 ._ibg {
-    position: relative;
+  position: relative;
 
-    img {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 /* White space - nowrap =========================================================================================================== */
 ._nobr {
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 /* Overflow hidden =========================================================================================================== */
 ._overflow-hid {
-    overflow: hidden;
-    // Fix for safari
-    -webkit-mask-image: -webkit-radial-gradient(white, black);
+  overflow: hidden;
+  // Fix for safari
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
 /* Visually hidden =========================================================================================================== */
 .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
