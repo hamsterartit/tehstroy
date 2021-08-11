@@ -74,8 +74,16 @@
   display: flex;
   justify-content: space-between;
 
+  @include for-size(tablet-portrait-down) {
+    overflow-x: auto;
+  }
+
   &__item {
     width: 23%;
+
+    @include for-size(tablet-portrait-down) {
+      min-width: 220px;
+    }
   }
 }
 

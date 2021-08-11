@@ -1,0 +1,79 @@
+.tabs {
+  @include for-size(tablet-portrait-up) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__btns {
+    @include for-size(tablet-portrait-down) {
+      overflow-x: auto;
+      display: flex;
+    }
+
+    @include for-size(tablet-portrait-up) {
+      width: calc(47% - 28px);
+    }
+  }
+
+  &__btn {
+    --color: #414141;
+    font-size: rem(18);
+    color: var(--color);
+    background-color: transparent;
+    width: 100%;
+    text-align: left;
+    margin-bottom: rem(30);
+    transition: color $animate-duration-effect ease;
+
+    @include for-size(tablet-portrait-down) {
+      width: auto;
+      margin-right: rem(30);
+      white-space: nowrap;
+    }
+
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: #df0000;
+      }
+    }
+
+    &._active {
+      --color: #ff0000;
+      font-size: rem(20);
+      font-weight: 600;
+      text-transform: uppercase;
+      pointer-events: none;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity $animate-duration-effect ease;
+
+    @include for-size(tablet-portrait-up) {
+      width: calc(53% - 18px);
+    }
+
+    &._active {
+      position: relative;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 380px;
+  }
+
+  &__text {
+    background-color: #fff;
+    padding: rem(30);
+    margin: rem(-140) rem(34) 0;
+    position: relative;
+    z-index: 1;
+  }
+}
