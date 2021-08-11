@@ -1,0 +1,26 @@
+/* Advantages =========================================================================================================== */
+.advantages {
+  display: flex;
+  justify-content: space-between;
+
+  @include for-size(tablet-portrait-down) {
+    overflow-x: auto;
+  }
+
+  &__item {
+    width: 23%;
+
+    @include for-size(tablet-portrait-down) {
+      min-width: 220px;
+    }
+  }
+}
+
+.advantage {
+  text-align: center;
+  padding: 0 rem(30);
+
+  &__img {
+    height: 70px;
+  }
+}

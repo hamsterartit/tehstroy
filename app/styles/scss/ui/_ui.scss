@@ -52,7 +52,7 @@
   }
 }
 
-/* Image background =========================================================================================================== */
+/* Section =========================================================================================================== */
 .section {
   padding-top: rem(77);
   padding-bottom: rem(77);
@@ -66,6 +66,7 @@
     position: relative;
     margin-bottom: rem(30);
     margin-top: 0;
+    line-height: 1.4;
 
     @include for-size(desktop-up) {
       margin-left: calc((100% - 1200px) / 2);
@@ -86,73 +87,10 @@
   }
 }
 
-/* Image background =========================================================================================================== */
-.advantages {
-  display: flex;
-  justify-content: space-between;
-
-  @include for-size(tablet-portrait-down) {
-    overflow-x: auto;
-  }
-
-  &__item {
-    width: 23%;
-
-    @include for-size(tablet-portrait-down) {
-      min-width: 220px;
-    }
-  }
-}
-
-.advantage {
+/* Show all btn =========================================================================================================== */
+.show-all {
   text-align: center;
-  padding: 0 rem(30);
-
-  &__img {
-    height: 70px;
-  }
-}
-
-/* About =========================================================================================================== */
-.about-section {
-  background-color: rgba(209, 209, 209, .2);
-  padding-top: rem(110);
-  padding-bottom: 0;
-}
-
-.about {
-  display: flex;
-  justify-content: space-between;
-
-  @include for-size(tablet-portrait-down) {
-    flex-direction: column-reverse;
-  }
-
-  &__text {
-    margin-top: rem(30);
-    padding-bottom: rem(90);
-
-    @include for-size(tablet-portrait-up) {
-      width: calc(45% - 36px);
-      margin-top: 0;
-    }
-
-    p {
-      margin-top: 0;
-    }
-  }
-
-  &__img {
-    display: inline-flex;
-
-    @include for-size(tablet-portrait-up) {
-      position: absolute;
-      top: rem(-150);
-      right: 0;
-      bottom: 0;
-      width: calc(55% - 36px);
-    }
-  }
+  margin-top: rem(50);
 }
 
 /* Image background cover =========================================================================================================== */
@@ -175,18 +113,6 @@
     height: 100%;
     object-fit: contain;
   }
-}
-
-/* White space - nowrap =========================================================================================================== */
-._nobr {
-  white-space: nowrap;
-}
-
-/* Overflow hidden =========================================================================================================== */
-._overflow-hid {
-  overflow: hidden;
-  // Fix for safari
-  -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
 /* Visually hidden =========================================================================================================== */
