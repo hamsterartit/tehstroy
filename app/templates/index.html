@@ -7,7 +7,7 @@
             <div class="swiper-wrapper">
                 @@for(var i = 0; i < 4; i++) {
                 <div class="banner__slide swiper-slide">
-                    <div class="banner__back _ibg">
+                    <div class="banner__back _ibg-cov">
                         <img src="img/banner.jpg" alt="">
                     </div>
                     <div class="banner__content _container">
@@ -21,6 +21,19 @@
                 }
             </div>
             <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <section class="section">
+        <h2 class="section__title" data-title="Преимущества">Преимущества</h2>
+        <div class="advantages _container">
+            @@for(var i = 0; i < 5; i++) {
+            <div class="advantage advantages__item">
+                <div class="advantage__img _ibg-con">
+                    <img src="img/advantage.svg" alt="">
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur</p>
+            </div>
+            }
         </div>
     </section>
 </main>

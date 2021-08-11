@@ -3,6 +3,7 @@
 
   @include for-size(tablet-portrait-up) {
     height: calc(100vh - 190px);
+    margin-bottom: rem(100);
   }
 
   &__slider {
@@ -99,5 +100,9 @@
     @include for-size(tablet-portrait-up) {
       --mg: 15px;
     }
+  }
+
+  .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: rem(80);
   }
 }
