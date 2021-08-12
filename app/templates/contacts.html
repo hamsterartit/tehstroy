@@ -1,0 +1,53 @@
+@@include('page-set/page-doctype.html', {"title":"Контакты"})
+@@include('page-blocks/header.html', {"link":"5"})
+<main>
+    <section class="section">
+        <h1 class="section__title" data-title="Контакты">Контакты</h1>
+        <div class="contacts _container-full">
+            <div class="contacts__tile">
+                <div class="contacts__form">
+                    <h3 class="contacts__title">Оставьте заявку</h3>
+                    <p class="contacts__subtitle">и мы перезвоним вам</p>
+                    <form class="form">
+                        <div class="form__item">
+                            <label class="visually-hidden"></label>
+                            <input class="field" type="text" placeholder="ФИО">
+                        </div>
+                        <div class="form__item">
+                            <label class="visually-hidden"></label>
+                            <input class="field" type="text" placeholder="Телефон">
+                        </div>
+                        <div class="form__item">
+                            <label class="visually-hidden"></label>
+                            <input class="field" type="email" placeholder="E-mail">
+                        </div>
+                        <div class="form__item">
+                            <label class="visually-hidden"></label>
+                            <input class="field" type="text" placeholder="Сообщение">
+                        </div>
+                        <div class="form__submit">
+                            <button class="btn-red" type="submit">Отправить</button>
+                        </div>
+                        <p class="form__info">Нажимая «Отправить» Вы даете согласие на обработку персональных данных и
+                            соглашаетесь c <a href="">политикой конфиденциальности</a>.</p>
+                    </form>
+                </div>
+                <div class="contacts__info-box">
+                    <div class="contacts__info">
+                        Телефон: <a href="tel:" class="contacts__link">+7 (000) 000-00-00</a>
+                    </div>
+                    <div class="contacts__info">
+                        Почта: <a href="mailto:" class="contacts__link">email@info.ru</a>
+                    </div>
+                </div>
+            </div>
+            <div class="contacts__map js-map">
+                <div class="map" id="js-map"></div>
+            </div>
+        </div>
+    </section>
+</main>
+@@include('page-blocks/footer.html')
+@@include('page-set/scripts.html')
+</body>
+</html>

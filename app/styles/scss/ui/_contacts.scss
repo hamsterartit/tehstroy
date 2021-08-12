@@ -1,0 +1,129 @@
+.contacts {
+  &__tile {
+    margin-bottom: rem(70);
+    position: relative;
+    z-index: 1;
+
+    @include for-size(tablet-portrait-up) {
+      background-color: #fff;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+      padding: rem(40) 0;
+      display: flex;
+    }
+
+    @include for-size(desktop-up) {
+      width: 55%;
+      min-width: 800px;
+    }
+  }
+
+  &__form {
+    @include for-size(tablet-portrait-up) {
+      width: 45%;
+      padding: 0 rem(60);
+    }
+  }
+
+  &__title {
+    font-size: rem(30);
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  &__subtitle {
+    font-size: rem(18);
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  &__info-box {
+    position: relative;
+    padding-top: rem(40);
+
+    @include for-size(tablet-portrait-up) {
+      padding: rem(140) rem(60);
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 1px;
+        top: 40px;
+        height: 58%;
+        background-color: #000;
+        opacity: .5;
+        left: 0;
+      }
+    }
+  }
+
+  &__info {
+    font-size: rem(25);
+    margin-bottom: 40px;
+  }
+
+  &__link {
+    --color: #000;
+    color: var(--color);
+    text-decoration: none;
+    transition: color $animate-duration-effect ease;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        --color: #ff0000;
+      }
+    }
+  }
+
+  &__map {
+    height: 400px;
+
+    @include for-size(desktop-up) {
+      position: absolute;
+      top: rem(-150);
+      right: 0;
+      height: auto;
+      bottom: rem(250);
+      width: calc(55% - 36px);
+    }
+  }
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+}
+
+.form {
+  &__item {
+    margin-bottom: 20px;
+  }
+
+  &__submit {
+    margin-top: 40px;
+  }
+
+  &__info {
+    margin-top: 20px;
+    font-size: 10px;
+    line-height: 1.2;
+    opacity: .5;
+
+    a {
+      color: #000;
+    }
+  }
+}
+
+.field {
+  border: 0;
+  border-bottom: 1px solid #000000;
+  height: 40px;
+  line-height: 40px;
+  color: #000;
+  font-size: rem(18);
+  width: 100%;
+
+  &::placeholder {
+    opacity: .5;
+  }
+}

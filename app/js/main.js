@@ -42,4 +42,31 @@ $(document).ready(function() {
         $btn.addClass('_active');
         $("[data-content-tab='" + $contentId + "']").addClass('_active');
     });
+
+    /* Map */
+    if ($('.js-map').length > 0) {
+        google.maps.event.addDomListener(window, 'load', initializeMap());
+    }
 });
+
+function initializeMap() {
+    const map = new google.maps.Map(document.getElementById('js-map'), {
+        zoom: 14,
+        center: { lat: 55.8184866, lng: 37.3664167 },
+        mapTypeControl: false,
+        streetViewControl: false,
+        rotateControl: false,
+        clickableIcons: false,
+        fullscreenControl: {position: google.maps.ControlPosition.RIGHT_TOP},
+        disableDefaultUI: true,
+        zoomControl: false,
+        options: {
+            gestureHandling: 'cooperative',
+        }
+    });
+    new google.maps.Marker({
+        position: { lat: 55.8184866, lng: 37.3664167 },
+        map,
+        title: "",
+    });
+}
