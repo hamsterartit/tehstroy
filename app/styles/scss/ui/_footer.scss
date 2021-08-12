@@ -16,6 +16,9 @@
   }
 
   &__logo {
+    width: 88px;
+    display: inline-block;
+
     @include for-size(tablet-portrait-up) {
       margin-right: rem(100);
     }
@@ -44,11 +47,6 @@
     flex-direction: column;
     justify-content: space-between;
   }
-}
-
-.footer-logo {
-  width: 88px;
-  display: inline-block;
 }
 
 .footer-nav {
@@ -81,6 +79,10 @@
     color: var(--color);
     text-decoration: none;
     transition: color $animate-duration-effect ease;
+
+    &--active {
+      --color: #ff0000;
+    }
 
     @media (hover: hover) and (pointer: fine) {
       &:hover {

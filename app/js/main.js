@@ -11,6 +11,19 @@ $(document).ready(function() {
         });
     }
 
+    /* Slider */
+    if($(".js-slider")) {
+        new Swiper(".js-slider", {
+            slidesPerView: 'auto',
+            spaceBetween: 30,
+            freeMode: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    }
+
     /* Nav mobile button*/
     $('.js-nav-btn').click(function() {
         $(this).toggleClass('_active');

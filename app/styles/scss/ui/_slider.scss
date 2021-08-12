@@ -1,0 +1,85 @@
+.slider {
+  position: relative;
+  padding-top: 105px;
+  margin-top: -105px;
+
+  &__item {
+    width: 240px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__nav {
+    position: absolute;
+    top: 22px;
+    left: 0;
+    right: 0;
+
+    @include for-size(tablet-portrait-down) {
+     display: none;
+    }
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, .2);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color $animate-duration-effect ease;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: #ff0000;
+      }
+    }
+
+    &:after {
+      display: none;
+    }
+
+    &:before {
+      content: '';
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: border-color $animate-duration-effect ease;
+    }
+  }
+
+  .swiper-button-next {
+    &:before {
+      border-left: 15px solid #ff0000;
+      left: 55%;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover:before {
+        border-left-color: #fff;
+      }
+    }
+  }
+
+  .swiper-button-prev {
+    left: auto;
+    right: 100px;
+
+    &:before {
+      left: 45%;
+      border-right: 15px solid #ff0000;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover:before {
+        border-right-color: #fff;
+      }
+    }
+  }
+}

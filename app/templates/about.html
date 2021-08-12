@@ -1,0 +1,46 @@
+@@include('page-set/page-doctype.html', {"title":"Техстрой"})
+@@include('page-blocks/header.html', {"link":"1"})
+<main>
+    <section class="section">
+        <h2 class="section__title" data-title="О компании">О компании</h2>
+        <div class="about _container-full">
+            <div class="about__tile-text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut orci neque. Nam a eros nec enim
+                    convallis pretium sit amet id enim. Curabitur vulputate metus ac ante vehicula, vel convallis massa
+                    tincidunt. Pellentesque sed velit elit. Nam suscipit sem in enim rhoncus, eget tincidunt ipsum
+                    consectetur. Mauris mattis at metus eget viverra. Proin dignissim sit amet velit eget imperdiet.
+                    Morbi vel lorem nec lacus euismod cursus. Vestibulum bibendum magna sed justo convallis porta.
+                    Quisque vel venenatis velit. Curabitur id venenatis tortor, vitae egestas risus. Nam tincidunt metus
+                    maximus pellentesque vestibulum. Cras et nisl vitae magna ultrices venenatis eget vitae massa.</p>
+            </div>
+            <div class="about__img _ibg-cov">
+                <img src="img/about2.jpg" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <h2 class="section__title" data-title="Лицензии">Лицензии</h2>
+        <div class="slider swiper-container js-slider">
+            <div class="swiper-wrapper">
+                @@for(var i = 0; i < 7; i++) {
+                <div class="slider__item _ibg-cov swiper-slide">
+                    <img src="img/3.jpg" alt="">
+                </div>
+                <div class="slider__item _ibg-cov swiper-slide">
+                    <img src="img/2.jpg" alt="">
+                </div>
+                }
+            </div>
+            <div class="slider__nav">
+                <div class="_container">
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+@@include('page-blocks/footer.html')
+@@include('page-set/scripts.html')
+</body>
+</html>

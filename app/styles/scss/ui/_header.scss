@@ -17,11 +17,15 @@
     height: 100%;
     justify-content: space-between;
   }
-}
 
-.logo {
-  width: rem(120);
-  display: inline-block;
+  &__logo {
+    width: rem(120);
+    display: inline-block;
+
+    @include for-size(tablet-portrait-up) {
+      margin-right: rem(50);
+    }
+  }
 }
 
 .nav {
@@ -89,6 +93,15 @@
       left: 0;
       right: 100%;
       transition: right $animate-duration-effect ease;
+    }
+
+    &--active {
+      --color: #ff0000;
+
+      &:before {
+        right: 0;
+        background-color: var(--color);
+      }
     }
 
     @media (hover: hover) and (pointer: fine) {

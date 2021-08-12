@@ -26,6 +26,24 @@
     }
   }
 
+  &__tile-text {
+    margin-top: rem(30);
+    position: relative;
+    z-index: 1;
+
+    @include for-size(tablet-portrait-up) {
+      width: 65%;
+      margin-top: 0;
+      margin-bottom: rem(70);
+      background-color: #fff;
+      padding: rem(30);
+    }
+
+    p {
+      margin-top: 0;
+    }
+  }
+
   &__img {
     display: inline-flex;
 
