@@ -2,6 +2,8 @@
   background-color: #000;
   padding-top: rem(36);
   padding-bottom: rem(36);
+  position: relative;
+  z-index: 1;
 
   &__content {
     display: flex;

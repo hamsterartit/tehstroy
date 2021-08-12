@@ -1,8 +1,37 @@
+.contacts-red-back {
+  @include for-size(tablet-portrait-up) {
+    height: calc(100vh - 190px);
+    margin-bottom: rem(100);
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -189px;
+      bottom: -200px;
+      width: 35vw;
+      background-color: #ff0000;
+      right: 0;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: -189px;
+      bottom: -200px;
+      border-top: 50vh solid transparent;
+      border-bottom: 50vh solid transparent;
+      border-right: 100px solid red;
+      right: 35vw;
+      width: 10vw;
+    }
+  }
+}
+
 .contacts {
-  &__tile {
+    &__tile {
     margin-bottom: rem(70);
     position: relative;
-    z-index: 1;
+    z-index: 2;
 
     @include for-size(tablet-portrait-up) {
       background-color: #fff;
@@ -76,14 +105,16 @@
 
   &__map {
     height: 400px;
+    position: relative;
+    z-index: 1;
 
     @include for-size(desktop-up) {
       position: absolute;
       top: rem(-150);
       right: 0;
-      height: auto;
+      height: 550px;
       bottom: rem(250);
-      width: calc(55% - 36px);
+      width: 60%;
     }
   }
 }

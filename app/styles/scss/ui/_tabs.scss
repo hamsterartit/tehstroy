@@ -1,4 +1,7 @@
 .tabs {
+  position: relative;
+  z-index: 1;
+
   @include for-size(tablet-portrait-up) {
     display: flex;
     justify-content: space-between;

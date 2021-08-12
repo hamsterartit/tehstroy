@@ -93,6 +93,7 @@
 .section {
   padding-top: rem(77);
   padding-bottom: rem(77);
+  position: relative;
 
   &__title {
     width: 100%;
@@ -137,6 +138,33 @@
 .show-all {
   text-align: center;
   margin-top: rem(50);
+}
+
+/* Red back =========================================================================================================== */
+.has-red-back {
+  @include for-size(tablet-portrait-up) {
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -189px;
+      width: 35vw;
+      background-color: #ff0000;
+      right: 0;
+      height: 740px;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: -189px;
+      border-top: 440px solid transparent;
+      border-bottom: 300px solid transparent;
+      border-right: 180px solid red;
+      right: 35vw;
+      width: 10vw;
+    }
+  }
 }
 
 /* Content =========================================================================================================== */
