@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   position: relative;
   z-index: 1;
+  justify-content: space-between;
 
   &__item {
     width: calc(50% - 25px);
@@ -37,10 +38,18 @@
   text-decoration: none;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0);
 
+  @include for-size(phone-only) {
+    text-align: center;
+  }
+
   &__img {
     height: 386px;
     padding: 10px;
     width: 250px;
+
+    @include for-size(phone-only) {
+      margin: 0 auto;
+    }
   }
 
   &__title {
@@ -55,5 +64,9 @@
     width: 100px;
     background-color: #ff0000;
     margin: 18px 0;
+
+    @include for-size(phone-only) {
+      margin: 18px auto;
+    }
   }
 }

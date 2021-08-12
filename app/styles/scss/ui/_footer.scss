@@ -5,6 +5,25 @@
   position: relative;
   z-index: 1;
 
+  @include for-size(tablet-portrait-up) {
+    &[class*="back-red"] {
+      &:before {
+        background-color: #ff0000;
+        width: 360px;
+        height: 28px;
+        content: '';
+        position: absolute;
+        top: -28px;
+      }
+    }
+    &.back-red-right:before {
+      right: 0;
+    }
+    &.back-red-left:before {
+      left: 0;
+    }
+  }
+
   &__content {
     display: flex;
     justify-content: space-between;

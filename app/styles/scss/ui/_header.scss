@@ -2,13 +2,29 @@
   height: 90px;
   position: relative;
   z-index: 2;
+  transition: all $animate-duration-effect ease;
+
+  &._fixed {
+    height: 90px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(15px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
 
   @include for-size(tablet-portrait-up) {
     height: 189px;
+
+    &._fixed {
+      height: 120px;
+    }
   }
 
   &._active {
-    z-index: 2;
+    z-index: 6;
+    background-color: #fff;
   }
 
   &__content {
@@ -39,10 +55,12 @@
     width: 100vw;
     padding-top: 50px;
     opacity: 0;
+    visibility: hidden;
     transition: opacity $animate-duration-effect ease;
 
     &._active {
       opacity: 1;
+      visibility: visible;
     }
   }
 

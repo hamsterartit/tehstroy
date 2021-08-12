@@ -3,7 +3,7 @@
   position: relative;
 
   @include for-size(tablet-portrait-up) {
-     height: calc(100vh - 190px);
+     height: calc(100vh - 189px);
      margin-bottom: rem(100);
 
      &:before {

@@ -13,7 +13,7 @@
       width: 277px;
       background-color: #ff0000;
       right: calc((100% - 1200px) / 2);
-      height: 70px;
+      height: 120px;
     }
   }
 }
@@ -58,7 +58,7 @@
     }
   }
 
-  &__img {
+  &__tile-img {
     display: inline-flex;
     z-index: 1;
 
@@ -68,6 +68,19 @@
       right: 0;
       bottom: rem(-77);
       width: calc(65% - 36px);
+    }
+  }
+
+  &__img {
+    display: inline-flex;
+    z-index: 1;
+
+    @include for-size(tablet-portrait-up) {
+      position: absolute;
+      top: rem(-150);
+      right: 0;
+      bottom: 0;
+      width: calc(55% - 36px);
     }
   }
 }

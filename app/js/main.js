@@ -1,6 +1,22 @@
 /* global $ */
 
 $(document).ready(function() {
+    /* Sticky header */
+    function stickyHeader() {
+        const scroll = $(window).scrollTop();
+        const header = $('.header');
+        if (scroll >= 89) {
+            header.addClass('_fixed');
+        } else {
+            header.removeClass('_fixed');
+        }
+    }
+
+    stickyHeader();
+    $(window).scroll(function() {
+        stickyHeader();
+    });
+
     /* Banner slider */
     if($(".js-banner-slider")) {
         new Swiper(".js-banner-slider", {
