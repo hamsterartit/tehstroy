@@ -31,14 +31,18 @@
   color: var(--color);
   text-decoration: none;
   transition: color $animate-duration-effect ease;
+  display: inline-flex;
+  align-items: center;
+
+  &--small {
+    font-size: 1rem;
+  }
 
   svg {
     height: 26px;
     width: 26px;
     fill: var(--color);
     margin-right: rem(15);
-    display: inline-block;
-    vertical-align: middle;
     transition: fill $animate-duration-effect ease;
   }
 
@@ -46,9 +50,18 @@
     &:hover {
       --color: #000;
     }
+
+    .footer &:hover {
+      --color: #ff0000;
+    }
   }
+
   @include for-size(tablet-portrait-down) {
     --color: #000;
+
+    .footer & {
+      --color: #fff;
+    }
   }
 }
 

@@ -1,0 +1,135 @@
+.footer {
+  background-color: #000;
+  padding-top: rem(36);
+  padding-bottom: rem(36);
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+
+    @include for-size(tablet-portrait-down) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &__logo {
+    @include for-size(tablet-portrait-up) {
+      margin-right: rem(100);
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: rem(40);
+
+    @include for-size(tablet-portrait-up) {
+      align-items: flex-start;
+      margin-top: 0;
+    }
+  }
+
+  &__contact {
+    &:not(:last-child) {
+      margin-bottom: rem(30);
+    }
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.footer-logo {
+  width: 88px;
+  display: inline-block;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+
+  @include for-size(tablet-portrait-down) {
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  &__item {
+    margin-bottom: 20px;
+    list-style: none;
+
+    &:not(:last-child) {
+
+      @include for-size(tablet-portrait-up) {
+        margin-right: rem(30);
+      }
+
+    }
+  }
+
+  &__link {
+    --color: #fff;
+    color: var(--color);
+    text-decoration: none;
+    transition: color $animate-duration-effect ease;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        --color: #ff0000;
+      }
+    }
+  }
+}
+
+.footer-sub-nav {
+  padding: 0;
+  margin: 0;
+
+  &__item {
+    list-style: none;
+  }
+
+  &__link {
+    --color: #929292;
+    color: var(--color);
+    font-size: rem(18);
+    text-decoration: none;
+    transition: color $animate-duration-effect ease;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        --color: #fff;
+      }
+    }
+  }
+}
+
+.politics-link {
+  --color: #fff;
+  color: var(--color);
+  transition: color $animate-duration-effect ease;
+  margin-top: rem(50);
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      --color: #ff0000;
+    }
+  }
+}
+
+.copyright {
+  color: #fff;
+
+  @include for-size(tablet-portrait-down) {
+    margin-top: 30px;
+  }
+}
