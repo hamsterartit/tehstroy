@@ -96,9 +96,8 @@
     }
 
     &--active {
-      --color: #ff0000;
-
       &:before {
+        --color: #ff0000;
         right: 0;
         background-color: var(--color);
       }

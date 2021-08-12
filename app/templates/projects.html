@@ -1,0 +1,27 @@
+@@include('page-set/page-doctype.html', {"title":"Наши проекты"})
+@@include('page-blocks/header.html', {"link":"3"})
+<main>
+    <section class="section">
+        <h1 class="section__title" data-title="Наши проекты">Наши проекты</h1>
+        <div class="projects-tiles _container">
+            @@for(var i = 0; i < 6; i++) {
+            <a href="detail.html" class="project-tile projects-tiles__item">
+                <div class="project-tile__img _ibg-cov">
+                    <img src="img/prj.jpg" alt="">
+                </div>
+                <h3 class="project-tile__title">Название</h3>
+                <div class="project-tile__divider"></div>
+                <p class="project-tile__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique ultricies ligula interdum
+                    porttitor.</p>
+            </a>
+            }
+        </div>
+        <div class="show-all _container">
+            <a href="" class="btn-red">Загрузить еще</a>
+        </div>
+    </section>
+</main>
+@@include('page-blocks/footer.html')
+@@include('page-set/scripts.html')
+</body>
+</html>
