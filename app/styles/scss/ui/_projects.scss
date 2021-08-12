@@ -68,6 +68,20 @@
     flex-direction: column;
     justify-content: flex-end;
     padding: rem(40);
+    opacity: 0;
+    transition: opacity $animate-duration-effect ease;
+
+    .projects:not(:first-child) & {
+      padding: rem(20);
+
+      .project__title {
+        font-size: rem(20);
+      }
+    }
+  }
+
+  &:hover .project__info {
+    opacity: 1;
   }
 
   &__title {

@@ -2,6 +2,10 @@
   @include for-size(tablet-portrait-up) {
     display: flex;
     justify-content: space-between;
+
+    &--no-flex {
+      display: block;
+    }
   }
 
   &__btns {
@@ -55,6 +59,10 @@
 
     @include for-size(tablet-portrait-up) {
       width: calc(53% - 18px);
+
+      .tabs--no-flex & {
+        width: 100%;
+      }
     }
 
     &._active {
@@ -75,5 +83,72 @@
     margin: rem(-140) rem(34) 0;
     position: relative;
     z-index: 1;
+  }
+}
+
+.tab-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+
+  @include for-size(tablet-portrait-up) {
+    padding-top: 226px;
+    margin-top: -226px;
+  }
+
+  &__img {
+    margin-bottom: 8px;
+    width: 100%;
+
+    @include for-size(tablet-portrait-up) {
+      width: calc(25% - 6px);
+      margin-bottom: 8px;
+
+      &:last-child {
+        width: calc(50% - 6px);
+      }
+
+      &:nth-child(1),
+      &:nth-child(2) {
+        position: absolute;
+        top: 0;
+        height: 220px;
+      }
+
+      &:nth-child(1) {
+        right: calc(25% + 2px);
+      }
+
+      &:nth-child(2) {
+        right: 0;
+      }
+    }
+  }
+
+
+  &__info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .75);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    padding: rem(10);
+    opacity: 0;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    transition: opacity $animate-duration-effect ease;
+  }
+
+  &__img:hover .tab-gallery__info {
+    opacity: 1;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1rem;
   }
 }
