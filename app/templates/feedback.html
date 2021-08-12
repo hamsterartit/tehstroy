@@ -1,0 +1,26 @@
+@@include('page-set/page-doctype.html', {"title":"Наши проекты"})
+@@include('page-blocks/header.html', {"link":"4"})
+<main>
+    <section class="section">
+        <h1 class="section__title" data-title="Отзывы">Отзывы</h1>
+        <div class="feedback-tiles _container">
+            @@for(var i = 0; i < 6; i++) {
+            <div class="feedback-tile feedback-tiles__item">
+                <div class="feedback-tile__img _ibg-con">
+                    <img src="img/feedback.jpg" alt="">
+                </div>
+                <h3 class="feedback-tile__title">Lorem ipsum</h3>
+                <div class="feedback-tile__divider"></div>
+                <p class="feedback-tile__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            }
+        </div>
+        <div class="show-all _container">
+            <a href="" class="btn-red">Загрузить еще</a>
+        </div>
+    </section>
+</main>
+@@include('page-blocks/footer.html')
+@@include('page-set/scripts.html')
+</body>
+</html>
