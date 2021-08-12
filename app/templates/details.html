@@ -1,0 +1,94 @@
+@@include('page-set/page-doctype.html', {"title":"Название"})
+@@include('page-blocks/header.html', {"link":""})
+<main>
+    <section class="section">
+        <h1 class="section__title" data-title="Название">Название</h1>
+        <div class="_container">
+            <div class="gallery-box">
+                <div class="gallery swiper-container js-gallery">
+                    <div class="swiper-wrapper">
+                        @@for(var i = 0; i < 8; i++) {
+                        <div class="gallery__slide swiper-slide _ibg-cov">
+                            <img src="img/11.jpg" alt="">
+                        </div>
+                        }
+                    </div>
+                </div>
+                <div thumbsSlider="" class="gallery-thumbs swiper-container js-gallery-thumb">
+                    <div class="swiper-wrapper">
+                        @@for(var i = 0; i < 8; i++) {
+                        <div class="gallery-thumbs__slide swiper-slide _ibg-cov">
+                            <img src="img/11.jpg" alt="">
+                        </div>
+                        }
+                    </div>
+                </div>
+
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+            <h1>Заголовок 1</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc orci purus, consequat gravida viverra in,
+                feugiat id magna. Aliquam porta varius velit, sed imperdiet risus semper eget. Sed lobortis malesuada
+                hendrerit. Nunc non ligula ut orci gravida cursus. Suspendisse pulvinar felis in ante tincidunt, eu
+                gravida
+                tortor maximus. Vivamus sit amet pulvinar nisl. Pellentesque habitant morbi tristique senectus et netus
+                et
+                malesuada fames ac turpis egestas. Ut eu tincidunt massa, a dictum mauris. Nullam aliquam ipsum elit,
+                nec
+                euismod dolor porta sed. Fusce non vulputate nulla. Maecenas ligula risus, iaculis sed egestas eu,
+                dapibus
+                eget erat. Vestibulum vel euismod augue. Maecenas lobortis tellus eget neque vulputate, sed tempor purus
+                dapibus.</p>
+            <ul>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc orci purus, consequat gravida viverra
+                    in,
+                    feugiat id magna.
+                </li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc orci purus, consequat gravida viverra
+                    in,
+                    feugiat id magna.
+                </li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+            </ul>
+            <h2>Заголовок 2</h2>
+            <ol>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc orci purus, consequat gravida viverra
+                    in, feugiat id magna.
+                </li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc orci purus, consequat gravida viverra
+                    in, feugiat id magna.
+                </li>
+            </ol>
+            <h3>Заголовок 3</h3>
+            <div class="text-tiles text-tiles--columns">
+                <div class="text-tiles__item text-tiles__item--title">Текст</div>
+                <div class="text-tiles__item text-tiles__item--title">Текст</div>
+                @@for(var i = 0; i < 6; i++) {
+                <div class="text-tiles__item">Таким образом реализация намеченных плановых заданий влечет за собой
+                    процесс внедрения и модернизации модели развития.
+                </div>
+                }
+            </div>
+            <h4>Заголовок 4</h4>
+            <div class="text-tiles">
+                <div class="text-tiles__item text-tiles__item--title">Текст</div>
+                @@for(var i = 0; i < 3; i++) {
+                <div class="text-tiles__item">Таким образом реализация намеченных плановых заданий влечет за собой
+                    процесс внедрения и модернизации модели развития.
+                </div>
+                }
+            </div>
+            <h5>Заголовок 5</h5>
+            <img src="img/11.jpg" alt="">
+        </div>
+    </section>
+</main>
+@@include('page-blocks/footer.html')
+@@include('page-set/scripts.html')
+</body>
+</html>

@@ -24,6 +24,29 @@ $(document).ready(function() {
         });
     }
 
+    /* Gallery */
+    if($('.gallery')) {
+        const thumbs = new Swiper(".js-gallery-thumb", {
+            spaceBetween: 30,
+            slidesPerView: 3,
+            freeMode: true,
+            watchSlidesVisibility: true,
+            watchSlidesProgress: true,
+            direction: "vertical",
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+        new Swiper(".js-gallery", {
+            slidesPerView: 1,
+            loop: true,
+            thumbs: {
+                swiper: thumbs,
+            },
+        });
+    }
+
     /* Nav mobile button*/
     $('.js-nav-btn').click(function() {
         $(this).toggleClass('_active');
