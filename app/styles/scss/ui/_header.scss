@@ -35,7 +35,7 @@
   }
 
   &__logo {
-    width: rem(120);
+    width: rem(140);
     display: inline-block;
 
     @include for-size(tablet-portrait-up) {
@@ -147,7 +147,7 @@
 
   &__contact {
     &:first-child {
-      margin-bottom: rem(20);
+      margin-bottom: rem(10);
     }
   }
 }
