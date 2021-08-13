@@ -1,7 +1,7 @@
 .footer {
   background-color: #000;
   padding-top: rem(36);
-  padding-bottom: rem(36);
+  padding-bottom: rem(24);
   position: relative;
   z-index: 1;
 
@@ -37,11 +37,11 @@
   }
 
   &__logo {
-    width: 88px;
+    min-width: 96px;
     display: inline-block;
 
     @include for-size(tablet-portrait-up) {
-      margin-right: rem(100);
+      margin-right: rem(80);
     }
   }
 
@@ -67,6 +67,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    &--nav {
+      @include for-size(tablet-portrait-up) {
+        width: 78%;
+      }
+    }
   }
 }
 
@@ -83,7 +89,7 @@
   }
 
   &__item {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     list-style: none;
 
     &:not(:last-child) {
@@ -116,6 +122,7 @@
 .footer-sub-nav {
   padding: 0;
   margin: 0;
+  line-height: 1.4;
 
   &__item {
     list-style: none;
@@ -140,7 +147,9 @@
   --color: #fff;
   color: var(--color);
   transition: color $animate-duration-effect ease;
-  margin-top: rem(50);
+  margin-top: rem(40);
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
@@ -150,7 +159,22 @@
 }
 
 .copyright {
-  color: #fff;
+  --color: #fff;
+  color: var(--color);
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+
+  a {
+    color: var(--color);
+    text-decoration: none;
+    transition: color $animate-duration-effect ease;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        --color: #ff0000;
+      }
+    }
+  }
 
   @include for-size(tablet-portrait-down) {
     margin-top: 30px;

@@ -45,6 +45,7 @@
   svg {
     height: 26px;
     width: 26px;
+    min-width: 26px;
     fill: var(--color);
     margin-right: rem(15);
     transition: fill $animate-duration-effect ease;
