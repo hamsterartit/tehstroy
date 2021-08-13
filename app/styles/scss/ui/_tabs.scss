@@ -22,6 +22,7 @@
 
     @include for-size(tablet-portrait-up) {
       min-width: calc(49% - 28px);
+      width: calc(49% - 28px);
     }
   }
 
