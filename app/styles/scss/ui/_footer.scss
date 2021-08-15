@@ -126,6 +126,10 @@
 
   &__item {
     list-style: none;
+
+    @include for-size(tablet-portrait-down) {
+      margin-bottom: 1rem;
+    }
   }
 
   &__link {

@@ -3,14 +3,20 @@
   justify-content: space-between;
 
   @include for-size(tablet-portrait-down) {
-    overflow-x: auto;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   &__item {
     width: 23%;
 
+    @include for-size(phone-only) {
+      min-width: 100%;
+    }
+
     @include for-size(tablet-portrait-down) {
-      min-width: 220px;
+      min-width: 33.3%;
+      margin-bottom: rem(20);
     }
   }
 }

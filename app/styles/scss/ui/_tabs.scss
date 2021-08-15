@@ -1,3 +1,9 @@
+.services-section {
+  @include for-size(tablet-portrait-down) {
+    padding-top: 0;
+  }
+}
+
 .tabs {
   position: relative;
   z-index: 1;
@@ -16,7 +22,7 @@
     z-index: 1;
 
     @include for-size(tablet-portrait-down) {
-      overflow-x: auto;
+      flex-direction: column;
       display: flex;
     }
 
@@ -38,8 +44,7 @@
 
     @include for-size(tablet-portrait-down) {
       width: auto;
-      margin-right: rem(30);
-      white-space: nowrap;
+      white-space: break-spaces;
     }
 
 
@@ -55,6 +60,10 @@
       font-weight: 600;
       text-transform: uppercase;
       pointer-events: none;
+
+      @include for-size(tablet-portrait-down) {
+
+      }
     }
   }
 

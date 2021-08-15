@@ -46,6 +46,7 @@
     height: 386px;
     padding: 10px;
     width: 250px;
+    display: inline-block;
 
     @include for-size(phone-only) {
       margin: 0 auto;
