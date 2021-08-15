@@ -89,9 +89,27 @@ $(document).ready(function () {
         const $btn = $(e.currentTarget);
         $('.js-tab-btn').removeClass('_active');
         $('.js-tab-content').removeClass('_active');
-        const $contentId = $btn.attr('data-tab');
+        const $contentId = $btn.attr('id');
         $btn.addClass('_active');
         $("[data-content-tab='" + $contentId + "']").addClass('_active');
+    });
+
+    function checkHash() {
+        if (window.location.hash) {
+            const wndHash = window.location.hash;
+            $(".tabs__btn").removeClass('_active');
+            $(".tabs__content").removeClass('_active');
+            $(wndHash).addClass("_active");
+            $("[data-content-tab='" + wndHash.replace("#", "") + "']").addClass('_active');
+            console.log(wndHash);
+        }
+    }
+
+    checkHash();
+
+    $('.js-footer-link').click(function () {
+        window.location.href = $(this).attr("href");
+        checkHash();
     });
 
     /* Map */
