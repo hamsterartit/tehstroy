@@ -162,6 +162,10 @@
       width: 100%;
       margin-right: 0;
       margin-bottom: rem(30);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
 
     @include for-size(desktop-up) {
@@ -180,13 +184,14 @@
 
 .project-tile {
   text-decoration: none;
-  padding: 20px 15px;
   background-color: #fff;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0);
   transition: box-shadow $animate-duration-effect ease;
   color: #000;
 
   @media (hover: hover) and (pointer: fine) {
+    padding: 20px 15px;
+
     &:hover {
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
     }

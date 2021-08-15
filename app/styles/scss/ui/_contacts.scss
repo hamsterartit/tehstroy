@@ -1,6 +1,6 @@
 .contacts-red-back {
   @include for-size(tablet-portrait-up) {
-    height: calc(100vh - 190px);
+   /* height: calc(100vh - 190px);*/
     margin-bottom: rem(100);
 
     &:before {
@@ -107,6 +107,11 @@
     height: 400px;
     position: relative;
     z-index: 1;
+
+    @include for-size(tablet-portrait-down) {
+      width: calc(100% + 32px);
+      margin-left: -16px;
+    }
 
     @include for-size(desktop-up) {
       position: absolute;

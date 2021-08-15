@@ -96,9 +96,17 @@
 
 /* Section =========================================================================================================== */
 .section {
-  padding-top: rem(77);
   padding-bottom: rem(77);
   position: relative;
+
+  .about-section + &,
+  .banner + & {
+    padding-top: rem(77);
+  }
+
+  @include for-size(tablet-portrait-up) {
+    padding-top: rem(77);
+  }
 
   &__title {
     width: 100%;
@@ -178,7 +186,7 @@
 /* Content =========================================================================================================== */
 .content {
   h2 {
-    font-size: rem(50);
+    margin-top: 0;
   }
 }
 
