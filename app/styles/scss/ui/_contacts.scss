@@ -1,6 +1,5 @@
 .contacts-red-back {
   @include for-size(tablet-portrait-up) {
-   /* height: calc(100vh - 190px);*/
     margin-bottom: rem(100);
 
     &:before {
@@ -21,8 +20,18 @@
       border-top: 50vh solid transparent;
       border-bottom: 50vh solid transparent;
       border-right: 100px solid red;
-      right: 35vw;
+      right: calc(35vw - 1px);
       width: 10vw;
+    }
+  }
+
+  @media(min-width: 2200px) {
+    &:before {
+      width: 40vw;
+    }
+
+    &:after {
+      right: calc(40vw - 1px);
     }
   }
 }
@@ -88,6 +97,10 @@
   &__info {
     font-size: rem(25);
     margin-bottom: 40px;
+
+    @include for-size(phone-only) {
+      font-size: 1rem;
+    }
   }
 
   &__link {

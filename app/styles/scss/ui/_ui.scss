@@ -104,6 +104,12 @@
     padding-top: rem(77);
   }
 
+  @include for-size(tablet-portrait-down) {
+    &:first-child {
+      padding-top: rem(77);
+    }
+  }
+
   @include for-size(tablet-portrait-up) {
     padding-top: rem(77);
   }
@@ -177,8 +183,18 @@
       border-top: 440px solid transparent;
       border-bottom: 300px solid transparent;
       border-right: 180px solid red;
-      right: 35vw;
+      right: calc(35vw - 1px);
       width: 10vw;
+    }
+  }
+
+  @media(min-width: 2200px) {
+    &:before {
+      width: 40vw;
+    }
+
+    &:after {
+      right: calc(40vw - 1px);
     }
   }
 }

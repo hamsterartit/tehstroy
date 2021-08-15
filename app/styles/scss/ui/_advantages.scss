@@ -12,6 +12,10 @@
 
     @include for-size(phone-only) {
       min-width: 100%;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
 
     @include for-size(tablet-portrait-down) {
@@ -27,5 +31,9 @@
 
   &__img {
     height: 70px;
+  }
+
+  p {
+    margin-bottom: 0;
   }
 }

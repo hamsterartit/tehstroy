@@ -24,9 +24,19 @@
       border-top: 50vh solid transparent;
       border-bottom: 50vh solid transparent;
       border-right: 120px solid red;
-      right: 34vw;
+      right: calc(34vw - 1px);
       width: 10vw;
       height: calc(100vh + 81px);
+    }
+  }
+
+  @media(min-width: 2200px) {
+    &:before {
+      width: 40vw;
+    }
+
+    &:after {
+      right: calc(40vw - 1px);
     }
   }
 
