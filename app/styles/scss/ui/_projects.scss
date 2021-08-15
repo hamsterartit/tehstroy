@@ -90,6 +90,7 @@
 .project {
   position: relative;
   z-index: 1;
+  display: block;
 
   &__back {
     height: 100%;
@@ -112,6 +113,10 @@
     opacity: 0;
     transition: opacity $animate-duration-effect ease;
 
+    @include for-size(tablet-portrait-down) {
+      padding: 1rem;
+    }
+
     .project:not(:first-child) & {
       padding: rem(20);
 
@@ -122,6 +127,7 @@
     }
   }
 
+  &._hover .project__info,
   &:hover .project__info {
     opacity: 1;
   }
@@ -130,15 +136,24 @@
     font-weight: 500;
     font-size: rem(40);
     margin-bottom: rem(20);
+
+    @include for-size(tablet-portrait-down) {
+      font-size: rem(20);
+      margin-bottom: rem(10);
+    }
+
   }
 
   &__text {
     margin-top: 0;
+    margin-bottom: 0;
 
     .project:not(:first-child) & {
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
+      @include for-size(tablet-portrait-up) {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
     }
   }
 }
