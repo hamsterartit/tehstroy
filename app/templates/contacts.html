@@ -8,25 +8,26 @@
                 <div class="contacts__form">
                     <h3 class="contacts__title">Оставьте заявку</h3>
                     <p class="contacts__subtitle">и мы перезвоним вам</p>
-                    <form class="form">
+                    <form class="form js-form" action="#">
                         <div class="form__item">
                             <label class="visually-hidden"></label>
-                            <input class="field" type="text" placeholder="ФИО">
+                            <input class="field" type="text" placeholder="ФИО" name="name"  required>
                         </div>
                         <div class="form__item">
                             <label class="visually-hidden"></label>
-                            <input class="field" type="text" placeholder="Телефон">
+                            <input class="field js-phone-field" type="text" placeholder="Телефон" name="phone">
+                        </div>
+                        <div class="form__item ">
+                            <label class="visually-hidden"></label>
+                            <input class="field js-email-field" type="email" placeholder="E-mail" name="email">
+                            <div class="js-message"></div>
                         </div>
                         <div class="form__item">
                             <label class="visually-hidden"></label>
-                            <input class="field" type="email" placeholder="E-mail">
-                        </div>
-                        <div class="form__item">
-                            <label class="visually-hidden"></label>
-                            <input class="field" type="text" placeholder="Сообщение">
+                            <input class="field" type="text" placeholder="Сообщение" name="message" required>
                         </div>
                         <div class="form__submit">
-                            <button class="btn-red" type="submit">Отправить</button>
+                            <button class="btn-red js-submit" type="submit">Отправить</button>
                         </div>
                         <p class="form__info">Нажимая «Отправить» Вы даете согласие на обработку персональных данных и
                             соглашаетесь c <a href="">политикой конфиденциальности</a>.</p>

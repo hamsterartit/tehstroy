@@ -1,6 +1,6 @@
 /* global $ */
 
-$(document).ready(function() {
+$(document).ready(function () {
     /* Sticky header */
     function stickyHeader() {
         const scroll = $(window).scrollTop();
@@ -13,7 +13,7 @@ $(document).ready(function() {
     }
 
     stickyHeader();
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         stickyHeader();
     });
 
@@ -30,7 +30,7 @@ $(document).ready(function() {
     });
 
     /* Banner slider */
-    if($(".js-banner-slider")) {
+    if ($(".js-banner-slider")) {
         new Swiper(".js-banner-slider", {
             pagination: {
                 el: ".swiper-pagination",
@@ -40,7 +40,7 @@ $(document).ready(function() {
     }
 
     /* Slider */
-    if($(".js-slider")) {
+    if ($(".js-slider")) {
         new Swiper(".js-slider", {
             slidesPerView: 'auto',
             spaceBetween: 30,
@@ -53,7 +53,7 @@ $(document).ready(function() {
     }
 
     /* Gallery */
-    if($('.gallery')) {
+    if ($('.gallery')) {
         const thumbs = new Swiper(".js-gallery-thumb", {
             spaceBetween: 30,
             slidesPerView: 3,
@@ -76,7 +76,7 @@ $(document).ready(function() {
     }
 
     /* Nav mobile button*/
-    $('.js-nav-btn').click(function() {
+    $('.js-nav-btn').click(function () {
         $(this).toggleClass('_active');
         $('.js-nav-body').toggleClass('_active');
         $('.js-header').toggleClass('_active');
@@ -84,7 +84,7 @@ $(document).ready(function() {
     });
 
     /* Tabs */
-    $('.js-tab-btn').click(function(e) {
+    $('.js-tab-btn').click(function (e) {
         e.preventDefault();
         const $btn = $(e.currentTarget);
         $('.js-tab-btn').removeClass('_active');
@@ -98,12 +98,40 @@ $(document).ready(function() {
     if ($('.js-map').length > 0) {
         google.maps.event.addDomListener(window, 'load', initializeMap());
     }
+
+    /* Form  */
+    $('.js-submit').click(function () {
+        const phoneFieldVal = $('.js-phone-field').val();
+        const mailFieldVal = $('.js-email-field').val();
+        $('.js-message').empty();
+
+        if (!phoneFieldVal && !mailFieldVal) {
+            $('.js-message').append("<span class='error'>Введите телефон или email</span>");
+        }
+    });
+
+    $('.js-form').validate({
+        rules: {
+            name: "required",
+            message: "required",
+            email: {
+                email: true
+            }
+        },
+        messages: {
+            name: "Введите имя",
+            message: "Введите сообщение",
+        },
+        submitHandler: function (form) {
+            form.submit();
+        }
+    });
 });
 
 function initializeMap() {
     const map = new google.maps.Map(document.getElementById('js-map'), {
         zoom: 14,
-        center: { lat: 55.8184866, lng: 37.3664167 },
+        center: {lat: 55.8184866, lng: 37.3664167},
         mapTypeControl: false,
         streetViewControl: false,
         rotateControl: false,
@@ -116,7 +144,7 @@ function initializeMap() {
         }
     });
     new google.maps.Marker({
-        position: { lat: 55.8184866, lng: 37.3664167 },
+        position: {lat: 55.8184866, lng: 37.3664167},
         map,
         title: "",
     });

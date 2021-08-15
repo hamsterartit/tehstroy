@@ -163,3 +163,9 @@
     opacity: .5;
   }
 }
+
+label.error,
+span.error {
+  font-size: 10px;
+  color: #ff0000;
+}
