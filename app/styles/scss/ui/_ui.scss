@@ -201,7 +201,10 @@
 
 /* Content =========================================================================================================== */
 section.content {
-  padding-top: 0;
+  @include for-size(tablet-portrait-down) {
+      padding-top: rem(77);
+  }
+
   h2 {
     margin-top: 0;
   }
@@ -215,6 +218,7 @@ section.content {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
   }
 }
 
@@ -226,6 +230,7 @@ section.content {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    display: block;
   }
 }
 

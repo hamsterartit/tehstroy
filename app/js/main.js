@@ -112,28 +112,17 @@ $(document).ready(function () {
     });
 
     /* Project links mobile */
-
-    let tapped = false
-    $('.js-project-link').on("touchstart", function (e) {
-        const $link = $(e.currentTarget);
-        if (!tapped) {
-            tapped = setTimeout(function () {
-                tapped = null;
-                $('.js-project-link').removeClass('_hover');
-                $link.addClass('_hover');
-            }, 300);
-        } else {
-            clearTimeout(tapped);
-            tapped = null;
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        $('.js-project-link').click(function (e) {
+            e.preventDefault();
+            const $link = $(e.currentTarget);
             $('.js-project-link').removeClass('_hover');
+            $link.addClass('_hover');
+        });
+        $('.js-project-more-link').click(function (e) {
             window.location.href = $(this).attr('href');
-        }
-        return false;
-    });
-    $('.js-project-link').on("touchmove", function () {
-        $('.js-project-link').removeClass('_hover');
-        return true;
-    });
+        });
+    }
 
     /* Map */
     if ($('.js-map').length > 0) {
