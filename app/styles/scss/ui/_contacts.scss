@@ -1,4 +1,8 @@
-.contacts-red-back {
+.contacts-section {
+  @include for-size(tablet-portrait-down) {
+    padding-bottom: 0;
+  }
+
   @include for-size(tablet-portrait-up) {
     margin-bottom: rem(100);
 

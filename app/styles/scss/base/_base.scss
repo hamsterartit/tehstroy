@@ -77,22 +77,42 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
 	font-size: rem(60);
+
+	@include for-size(tablet-portrait-down) {
+		font-size: rem(40);
+	}
 }
 
 h2 {
 	font-size: rem(50);
+
+	@include for-size(tablet-portrait-down) {
+		font-size: rem(35);
+	}
 }
 
 h3 {
 	font-size: rem(40);
+
+	@include for-size(tablet-portrait-down) {
+		font-size: rem(30);
+	}
 }
 
 h4 {
 	font-size: rem(35);
+
+	@include for-size(tablet-portrait-down) {
+		font-size: rem(25);
+	}
 }
 
 h5 {
 	font-size: rem(30);
+
+	@include for-size(tablet-portrait-down) {
+		font-size: rem(20);
+	}
 }
 
 .compensate-for-scrollbar {
