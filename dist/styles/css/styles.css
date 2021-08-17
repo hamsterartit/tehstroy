@@ -676,6 +676,31 @@ h5 {
   margin-bottom: 1.5rem;
 }
 
+.map-list {
+  position: relative;
+  z-index: 1;
+  padding: 0;
+}
+
+.map-list li {
+  margin-bottom: 1rem;
+  list-style: none;
+}
+
+.map-list a {
+  color: #000;
+  text-decoration: none;
+}
+
+.map-list a:hover {
+  text-decoration: underline;
+}
+
+.map-list ul {
+  padding-left: 2rem;
+  margin-top: 1rem;
+}
+
 /* Show all btn =========================================================================================================== */
 
 .show-all {
