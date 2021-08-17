@@ -203,6 +203,31 @@
   }
 }
 
+.map-list {
+  position: relative;
+  z-index: 1;
+  padding: 0;
+
+  li {
+    margin-bottom: 1rem;
+    list-style: none;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  ul {
+    padding-left: rem(40);
+    margin-top: 1rem;
+  }
+}
+
 /* Show all btn =========================================================================================================== */
 .show-all {
   text-align: center;
