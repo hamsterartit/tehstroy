@@ -156,6 +156,53 @@
   }
 }
 
+.not-found-section {
+  text-align: center;
+
+  &:after {
+    border-right-width: 75px !important;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__title {
+    font-size: rem(100);
+    line-height: rem(100);
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: rem(30);
+
+    @include for-size(desktop-up) {
+      font-size: rem(150);
+      line-height: rem(150);
+    }
+  }
+
+  &__subtitle {
+    font-size: rem(20);
+    font-weight: 500;
+    margin-bottom: rem(10);
+    margin-top: 0;
+
+    @include for-size(desktop-up) {
+      font-size: rem(30);
+    }
+  }
+
+  &__text {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: rem(16);
+
+    &:last-of-type {
+      margin-bottom: rem(30);
+    }
+  }
+}
+
 /* Show all btn =========================================================================================================== */
 .show-all {
   text-align: center;

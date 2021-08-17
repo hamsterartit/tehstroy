@@ -638,6 +638,44 @@ h5 {
   line-height: 1.4;
 }
 
+.not-found-section {
+  text-align: center;
+}
+
+.not-found-section:after {
+  border-right-width: 75px !important;
+}
+
+.not-found-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.not-found-section__title {
+  font-size: 5rem;
+  line-height: 5rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.not-found-section__subtitle {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.not-found-section__text {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 0.8rem;
+}
+
+.not-found-section__text:last-of-type {
+  margin-bottom: 1.5rem;
+}
+
 /* Show all btn =========================================================================================================== */
 
 .show-all {
@@ -1968,6 +2006,15 @@ span.error {
 
   .section__title:before {
     font-size: 8rem;
+  }
+
+  .not-found-section__title {
+    font-size: 7.5rem;
+    line-height: 7.5rem;
+  }
+
+  .not-found-section__subtitle {
+    font-size: 1.5rem;
   }
 
   .projects-tiles__item {
