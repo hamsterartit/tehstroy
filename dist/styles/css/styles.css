@@ -1593,31 +1593,48 @@ span.error {
   position: relative;
 }
 
-.gallery-box .swiper-button-prev {
-  display: none;
-}
-
+.gallery-box .swiper-button-prev,
 .gallery-box .swiper-button-next {
   width: 36px;
   height: 36px;
   position: absolute;
   left: auto;
   transform: none;
-  top: auto;
   right: 94px;
-  bottom: 0;
 }
 
+.gallery-box .swiper-button-prev:after,
 .gallery-box .swiper-button-next:after {
   display: none;
 }
 
+.gallery-box .swiper-button-prev:before,
 .gallery-box .swiper-button-next:before {
   content: "";
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
-  border-top: 25px solid #ff0000;
   transition: border-color 500ms ease;
+}
+
+.gallery-box .swiper-button-prev {
+  top: -33px;
+}
+
+.gallery-box .swiper-button-prev:before {
+  border-bottom: 25px solid #fff;
+}
+
+.gallery-box .swiper-button-prev.swiper-button-disabled {
+  opacity: 0;
+}
+
+.gallery-box .swiper-button-next {
+  top: auto;
+  bottom: 0;
+}
+
+.gallery-box .swiper-button-next:before {
+  border-top: 25px solid #ff0000;
 }
 
 .gallery-thumbs__slide {
@@ -2243,6 +2260,7 @@ span.error {
     display: none;
   }
 
+  .gallery-box .swiper-button-prev,
   .gallery-box .swiper-button-next {
     display: none;
   }
@@ -2367,6 +2385,10 @@ span.error {
 
   .slider .swiper-button-prev:hover:before {
     border-right-color: #fff;
+  }
+
+  .gallery-box .swiper-button-prev:hover:before {
+    border-bottom-color: #000;
   }
 
   .gallery-box .swiper-button-next:hover:before {

@@ -5,19 +5,14 @@
   padding-bottom: 60px;
   position: relative;
 
-  .swiper-button-prev {
-    display: none;
-  }
-
+  .swiper-button-prev,
   .swiper-button-next {
     width: 36px;
     height: 36px;
     position: absolute;
     left: auto;
     transform: none;
-    top: auto;
     right: 94px;
-    bottom: 0;
 
     @include for-size(tablet-portrait-down) {
       display: none;
@@ -31,8 +26,35 @@
       content: '';
       border-left: 15px solid transparent;
       border-right: 15px solid transparent;
-      border-top: 25px solid #ff0000;
       transition: border-color $animate-duration-effect ease;
+    }
+
+  }
+
+  .swiper-button-prev {
+    top: -33px;
+
+    &:before {
+      border-bottom: 25px solid #fff;
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover:before {
+        border-bottom-color: #000;
+      }
+    }
+  }
+
+  .swiper-button-next {
+    top: auto;
+    bottom: 0;
+
+    &:before {
+      border-top: 25px solid #ff0000;
     }
 
     @media (hover: hover) and (pointer: fine) {
