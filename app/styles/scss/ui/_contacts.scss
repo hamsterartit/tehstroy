@@ -62,6 +62,10 @@
   &__form {
     @include for-size(tablet-portrait-up) {
       width: 45%;
+      padding: 0 rem(30);
+    }
+
+    @include for-size(big-desktop-up) {
       padding: 0 rem(60);
     }
   }
@@ -83,7 +87,7 @@
     padding-top: rem(40);
 
     @include for-size(tablet-portrait-up) {
-      padding: rem(140) rem(60);
+      padding: rem(140) rem(30);
 
       &:before {
         content: '';
@@ -95,6 +99,10 @@
         opacity: .5;
         left: 0;
       }
+    }
+
+    @include for-size(big-desktop-up) {
+      padding: rem(140) rem(60);
     }
   }
 

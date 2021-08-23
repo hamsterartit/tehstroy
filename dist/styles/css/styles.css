@@ -827,6 +827,7 @@ section.content h2 {
 
 .nav__item {
   list-style: none;
+  position: relative;
 }
 
 .nav__item:not(:last-child) {
@@ -866,6 +867,36 @@ section.content h2 {
 
 .nav__contact:first-child {
   margin-bottom: 0.5rem;
+}
+
+.sub-nav {
+  position: absolute;
+  width: 500px;
+  background-color: #fff;
+  padding: 16px;
+  top: 100%;
+  left: -50px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 500ms ease;
+}
+
+.sub-nav__item {
+  list-style: none;
+}
+
+.sub-nav__item:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.sub-nav__link {
+  --color: #000;
+  text-decoration: none;
+  color: var(--color);
+  position: relative;
+  transition: color 500ms ease;
+  font-size: 0.9rem;
 }
 
 .footer {
@@ -1643,6 +1674,11 @@ span.error {
 }
 
 @media (min-width: 964px) {
+  .section.not-found-section {
+    padding-top: 7rem;
+    margin-bottom: 7rem;
+  }
+
   .section {
     padding-top: 3.85rem;
   }
@@ -2003,11 +2039,11 @@ span.error {
 
   .contacts__form {
     width: 45%;
-    padding: 0 3rem;
+    padding: 0 1.5rem;
   }
 
   .contacts__info-box {
-    padding: 7rem 3rem;
+    padding: 7rem 1.5rem;
   }
 
   .contacts__info-box:before {
@@ -2095,6 +2131,16 @@ span.error {
     height: 550px;
     bottom: 12.5rem;
     width: 60%;
+  }
+}
+
+@media (min-width: 1660px) {
+  .contacts__form {
+    padding: 0 3rem;
+  }
+
+  .contacts__info-box {
+    padding: 7rem 3rem;
   }
 }
 
@@ -2340,6 +2386,16 @@ span.error {
   .nav__link:hover:before {
     right: 0;
     background-color: var(--color);
+  }
+
+  .nav__link:hover + .sub-nav,
+  .sub-nav:hover {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .sub-nav__link:hover {
+    --color: #ff0000;
   }
 
   .footer-nav__link:hover {

@@ -104,6 +104,13 @@
     padding-top: rem(77);
   }
 
+  &.not-found-section {
+    @include for-size(tablet-portrait-up) {
+      padding-top: rem(140);
+      margin-bottom: rem(140);
+    }
+  }
+
   @include for-size(tablet-portrait-down) {
     &:first-child {
       padding-top: rem(77);
@@ -274,7 +281,7 @@
 /* Content =========================================================================================================== */
 section.content {
   @include for-size(tablet-portrait-down) {
-      padding-top: rem(77);
+    padding-top: rem(77);
   }
 
   h2 {

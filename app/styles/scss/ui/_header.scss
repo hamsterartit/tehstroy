@@ -86,6 +86,7 @@
 
   &__item {
     list-style: none;
+    position: relative;
 
     &:not(:last-child) {
       margin-bottom: rem(30);
@@ -149,6 +150,50 @@
   &__contact {
     &:first-child {
       margin-bottom: rem(10);
+    }
+  }
+}
+
+.sub-nav {
+  position: absolute;
+  width: 500px;
+  background-color: #fff;
+  padding: $pd;
+  top: 100%;
+  left: -50px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2);
+  opacity: 0;
+  visibility: hidden;
+  transition: all $animate-duration-effect ease;
+
+  @media (hover: hover) and (pointer: fine) {
+    .nav__link:hover + &,
+    &:hover {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__item {
+    list-style: none;
+
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+    }
+  }
+
+  &__link {
+    --color: #000;
+    text-decoration: none;
+    color: var(--color);
+    position: relative;
+    transition: color $animate-duration-effect ease;
+    font-size: rem(18);
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        --color: #ff0000;
+      }
     }
   }
 }

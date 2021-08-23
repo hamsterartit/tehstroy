@@ -5,6 +5,7 @@
   $tablet-portrait-up-boundary: 964px;
   $tablet-landscape-up-boundary: 1024px;
   $desktop-up-boundary: 1200px;
+  $big-desktop-up-boundary: 1660px;
 
   @if $range == phone-only {
     @media (max-width: #{$phone-up-boundary - 1}) {
@@ -24,6 +25,10 @@
     }
   } @else if $range == desktop-up {
     @media (min-width: $desktop-up-boundary) {
+      @content;
+    }
+  } @else if $range == big-desktop-up {
+    @media (min-width: $big-desktop-up-boundary) {
       @content;
     }
   }
