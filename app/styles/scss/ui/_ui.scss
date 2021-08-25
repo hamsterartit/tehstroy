@@ -130,6 +130,8 @@
     margin-bottom: rem(30);
     margin-top: 0;
     line-height: 1.4;
+    position: relative;
+    z-index: 1;
 
     @include for-size(tablet-portrait-down) {
       font-size: rem(40);

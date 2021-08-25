@@ -98,9 +98,15 @@ $(document).ready(function () {
         if (window.location.hash) {
             const wndHash = window.location.hash;
             $('.tabs__btn').removeClass('_active');
+            $('.js-footer-link').removeClass('_active');
             $('.tabs__content').removeClass('_active');
             $(wndHash).addClass('_active');
             $("[data-content-tab='" + wndHash.replace("#", "") + "']").addClass('_active');
+            $("[data-header-link='" + wndHash.replace("#", "") + "']").addClass('_active');
+            $('.js-nav-btn').removeClass('_active');
+            $('.js-nav-body').removeClass('_active');
+            $('.js-header').removeClass('_active');
+            $('body').removeClass('locked');
         }
     }
 

@@ -636,6 +636,8 @@ h5 {
   margin-bottom: 1.5rem;
   margin-top: 0;
   line-height: 1.4;
+  position: relative;
+  z-index: 1;
 }
 
 .not-found-section {
@@ -828,6 +830,7 @@ section.content h2 {
 .nav__item {
   list-style: none;
   position: relative;
+  text-align: center;
 }
 
 .nav__item:not(:last-child) {
@@ -870,16 +873,8 @@ section.content h2 {
 }
 
 .sub-nav {
-  position: absolute;
-  width: 500px;
-  background-color: #fff;
-  padding: 16px;
-  top: 100%;
-  left: -50px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-  opacity: 0;
-  visibility: hidden;
-  transition: all 500ms ease;
+  padding: 0;
+  margin: 1rem 0 0 0;
 }
 
 .sub-nav__item {
@@ -897,6 +892,10 @@ section.content h2 {
   position: relative;
   transition: color 500ms ease;
   font-size: 0.9rem;
+}
+
+.sub-nav__link._active {
+  --color: #ff0000;
 }
 
 .footer {
@@ -1744,6 +1743,19 @@ span.error {
     margin-top: 0;
   }
 
+  .sub-nav {
+    position: absolute;
+    width: 500px;
+    background-color: #fff;
+    padding: 16px;
+    top: 100%;
+    left: -50px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 500ms ease;
+  }
+
   .footer[class*=back-red]:before {
     background-color: #ff0000;
     width: 360px;
@@ -2220,6 +2232,7 @@ span.error {
     height: calc(100vh - 90px);
     width: 100vw;
     padding-top: 50px;
+    padding-bottom: 50px;
     opacity: 0;
     visibility: hidden;
     transition: opacity 500ms ease;
@@ -2228,6 +2241,7 @@ span.error {
   .nav._active {
     opacity: 1;
     visibility: visible;
+    overflow-y: auto;
   }
 
   .nav__list {
@@ -2377,6 +2391,10 @@ span.error {
 
   .btn-red:hover {
     --back-color: #df0000;
+  }
+
+  .nav__item:last-child .nav__link:hover {
+    --color: #000;
   }
 
   .nav__link:hover {

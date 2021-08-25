@@ -55,6 +55,7 @@
     height: calc(100vh - 90px);
     width: 100vw;
     padding-top: 50px;
+    padding-bottom: 50px;
     opacity: 0;
     visibility: hidden;
     transition: opacity $animate-duration-effect ease;
@@ -62,6 +63,7 @@
     &._active {
       opacity: 1;
       visibility: visible;
+      overflow-y: auto;
     }
   }
 
@@ -87,6 +89,7 @@
   &__item {
     list-style: none;
     position: relative;
+    text-align: center;
 
     &:not(:last-child) {
       margin-bottom: rem(30);
@@ -124,6 +127,9 @@
     }
 
     @media (hover: hover) and (pointer: fine) {
+      .nav__item:last-child &:hover {
+        --color: #000;
+      }
       &:hover {
         --color: #ff0000;
 
@@ -155,16 +161,21 @@
 }
 
 .sub-nav {
-  position: absolute;
-  width: 500px;
-  background-color: #fff;
-  padding: $pd;
-  top: 100%;
-  left: -50px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2);
-  opacity: 0;
-  visibility: hidden;
-  transition: all $animate-duration-effect ease;
+  padding: 0;
+  margin: 1rem 0 0 0;
+
+  @include for-size(tablet-portrait-up) {
+    position: absolute;
+    width: 500px;
+    background-color: #fff;
+    padding: $pd;
+    top: 100%;
+    left: -50px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2);
+    opacity: 0;
+    visibility: hidden;
+    transition: all $animate-duration-effect ease;
+  }
 
   @media (hover: hover) and (pointer: fine) {
     .nav__link:hover + &,
@@ -189,6 +200,10 @@
     position: relative;
     transition: color $animate-duration-effect ease;
     font-size: rem(18);
+
+    &._active {
+        --color: #ff0000;
+    }
 
     @media (hover: hover) and (pointer: fine) {
       &:hover {
