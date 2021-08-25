@@ -87,11 +87,13 @@ $(document).ready(function () {
     $('.js-tab-btn').click(function (e) {
         e.preventDefault();
         const $btn = $(e.currentTarget);
+        $('.js-footer-link').removeClass('_active');
         $('.js-tab-btn').removeClass('_active');
         $('.js-tab-content').removeClass('_active');
         const $contentId = $btn.attr('id');
         $btn.addClass('_active');
         $("[data-content-tab='" + $contentId + "']").addClass('_active');
+        $("[data-header-link='" + $contentId + "']").addClass('_active');
     });
 
     function checkHash() {
