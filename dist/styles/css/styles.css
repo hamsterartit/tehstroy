@@ -1756,6 +1756,10 @@ span.error {
     transition: all 500ms ease;
   }
 
+  .sub-nav__item {
+    text-align: left;
+  }
+
   .footer[class*=back-red]:before {
     background-color: #ff0000;
     width: 360px;
