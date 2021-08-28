@@ -93,7 +93,6 @@ $(document).ready(function () {
         const $contentId = $btn.attr('id');
         $btn.addClass('_active');
         $("[data-content-tab='" + $contentId + "']").addClass('_active');
-        $("[data-header-link='" + $contentId + "']").addClass('_active');
     });
 
     function checkHash() {
@@ -104,7 +103,6 @@ $(document).ready(function () {
             $('.tabs__content').removeClass('_active');
             $(wndHash).addClass('_active');
             $("[data-content-tab='" + wndHash.replace("#", "") + "']").addClass('_active');
-            $("[data-header-link='" + wndHash.replace("#", "") + "']").addClass('_active');
             $('.js-nav-btn').removeClass('_active');
             $('.js-nav-body').removeClass('_active');
             $('.js-header').removeClass('_active');
