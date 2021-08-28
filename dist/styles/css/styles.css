@@ -1142,6 +1142,8 @@ section.content h2 {
 .tabs__btns {
   position: relative;
   z-index: 1;
+  margin: 0;
+  padding: 0;
 }
 
 .tabs__btn {
@@ -1156,6 +1158,32 @@ section.content h2 {
 }
 
 .tabs__btn._active {
+  --color: #ff0000;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.tabs__item {
+  margin-bottom: 1.5rem;
+  width: 100%;
+  list-style: none;
+}
+
+.tabs__link {
+  --color: #414141;
+  font-size: 0.9rem;
+  color: var(--color);
+  background-color: transparent;
+  width: 100%;
+  text-align: left;
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+  transition: color 500ms ease;
+}
+
+.tabs__link._active {
   --color: #ff0000;
   font-size: 1rem;
   font-weight: 600;
@@ -1197,7 +1225,6 @@ section.content h2 {
 .tab-gallery {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   position: relative;
 }
 
@@ -1872,12 +1899,9 @@ span.error {
   }
 
   .tab-gallery__img {
-    width: calc(25% - 6px);
+    width: calc(25% - 8px);
     margin-bottom: 8px;
-  }
-
-  .tab-gallery__img:last-child {
-    width: calc(50% - 6px);
+    margin-right: 8px;
   }
 
   .tab-gallery__img:nth-child(1),
@@ -2437,6 +2461,10 @@ span.error {
   }
 
   .tabs__btn:hover {
+    color: #df0000;
+  }
+
+  .tabs__link:hover {
     color: #df0000;
   }
 
