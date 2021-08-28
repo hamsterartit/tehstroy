@@ -14,6 +14,8 @@
   &__btns {
     position: relative;
     z-index: 1;
+    margin: 0;
+    padding: 0;
 
     @include for-size(tablet-portrait-down) {
       flex-direction: column;
@@ -54,10 +56,38 @@
       font-weight: 600;
       text-transform: uppercase;
       pointer-events: none;
+    }
+  }
 
-      @include for-size(tablet-portrait-down) {
+  &__item {
+    margin-bottom: rem(30);
+    width: 100%;
+    list-style: none;
+  }
+  
+  &__link {
+    --color: #414141;
+    font-size: rem(18);
+    color: var(--color);
+    background-color: transparent;
+    width: 100%;
+    text-align: left;
+    text-decoration: none;
+    margin-bottom: rem(30);
+    transition: color $animate-duration-effect ease;
 
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: #df0000;
       }
+    }
+
+    &._active {
+      --color: #ff0000;
+      font-size: rem(20);
+      font-weight: 600;
+      text-transform: uppercase;
+      pointer-events: none;
     }
   }
 
@@ -104,7 +134,6 @@
 .tab-gallery {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   position: relative;
 
   @include for-size(tablet-portrait-up) {
@@ -117,12 +146,9 @@
     width: 100%;
 
     @include for-size(tablet-portrait-up) {
-      width: calc(25% - 6px);
+      width: calc(25% - 8px);
       margin-bottom: 8px;
-
-      &:last-child {
-        width: calc(50% - 6px);
-      }
+      margin-right: 8px;
 
       &:nth-child(1),
       &:nth-child(2) {
